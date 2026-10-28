@@ -184,17 +184,17 @@ variable "security_and_analysis_on_private_repo" {
     enable_advanced_security                     = bool
     enable_secret_scanning                       = bool
     enable_secret_scanning_push_protection       = bool
-    enable_secret_scanning_ai_detection          = bool
-    enable_secret_scanning_non_provider_patterns = bool
-    enable_code_security                         = bool
+    # enable_secret_scanning_ai_detection          = bool
+    # enable_secret_scanning_non_provider_patterns = bool
+    # enable_code_security                         = bool
   })
   default = {
     enable_advanced_security                     = false
     enable_secret_scanning                       = false
     enable_secret_scanning_push_protection       = false
-    enable_secret_scanning_ai_detection          = false
-    enable_secret_scanning_non_provider_patterns = false
-    enable_code_security                         = false
+    # enable_secret_scanning_ai_detection          = false
+    # enable_secret_scanning_non_provider_patterns = false
+    # enable_code_security                         = false
   }
   nullable = false
 }

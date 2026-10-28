@@ -45,15 +45,16 @@ resource "github_repository" "this" {
         status = advanced_security.value
       }
     }
-    code_security {
-      status = var.visibility == "public" ? "enabled" : var.security_and_analysis_on_private_repo.enable_code_security ? "enabled" : "disabled"
-    }
-    secret_scanning_ai_detection {
-      status = var.visibility == "public" ? "enabled" : var.security_and_analysis_on_private_repo.enable_secret_scanning_ai_detection ? "enabled" : "disabled"
-    }
-    secret_scanning_non_provider_patterns {
-      status = var.visibility == "public" ? "enabled" : var.security_and_analysis_on_private_repo.enable_secret_scanning_non_provider_patterns ? "enabled" : "disabled"
-    }
+    # these don't work, and currently in eternal drift
+    # code_security {
+    #   status = var.visibility == "public" ? "enabled" : var.security_and_analysis_on_private_repo.enable_code_security ? "enabled" : "disabled"
+    # }
+    # secret_scanning_ai_detection {
+    #   status = var.visibility == "public" ? "enabled" : var.security_and_analysis_on_private_repo.enable_secret_scanning_ai_detection ? "enabled" : "disabled"
+    # }
+    # secret_scanning_non_provider_patterns {
+    #   status = var.visibility == "public" ? "enabled" : var.security_and_analysis_on_private_repo.enable_secret_scanning_non_provider_patterns ? "enabled" : "disabled"
+    # }
     secret_scanning {
       status = var.visibility == "public" ? "enabled" : var.security_and_analysis_on_private_repo.enable_secret_scanning ? "enabled" : "disabled"
     }
